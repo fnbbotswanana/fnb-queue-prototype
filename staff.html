@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FNB Botswana – Staff Portal</title>
+<link rel="icon" href="logo.jpg">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="brand"><img src="logo.jpg" alt="FNB logo"><div><h1>Staff Portal – Queue Management</h1><small>Authorised staff only · demo sign-in</small> <small id="sync" style="display:block"></small></div></div>
+<div class="brsel"><button class="b" onclick="logout()">Sign out</button><select id="br" aria-label="Branch"></select></div></header>
+<nav id="nav"></nav><main id="app"></main>
+<script>const ROLES={teller:"Teller / Consultant",supervisor:"Supervisor",manager:"Branch manager",head:"Head office admin"};
+const role=()=>sessionStorage.getItem("fnbrole");
+function login(){if(document.getElementById("pin").value!=="1234"){document.getElementById("lerr").style.display="block";return}sessionStorage.setItem("fnbrole",document.getElementById("rl").value);render()}
+function logout(){sessionStorage.removeItem("fnbrole");render()}
+window.PAGE={start:"staff",views:()=>role()=="teller"?[["staff","My counter"]]:[["staff","Counter"],["mgr","Manager dashboard"]],
+gate:()=>role()?"":`<div class="card login"><h2>Staff sign-in</h2><label>Role</label><select id="rl">${Object.entries(ROLES).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select><label>Username</label><input id="un" autocomplete="off"><label>PIN</label><input id="pin" type="password" onkeydown="if(event.key=='Enter')login()"><div id="lerr" class="warn" style="display:none">Incorrect PIN.</div><p class="mu">Demo PIN: 1234</p><button class="b p" onclick="login()">Sign in</button></div>`};</script>
+<script src="config.js"></script>
+<script src="app.js"></script></body></html>
