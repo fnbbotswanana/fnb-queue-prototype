@@ -1,0 +1,49 @@
+/* FNB Botswana-inspired theme. Palette sampled from the supplied logo; layout echoes the public site (white header, teal accents, light grey canvas). */
+:root{--teal:#00abab;--teal-d:#008584;--orange:#f89c2c;--ink:#200000;--tx:#1d2b2b;--mu:#667373;--bg:#f1f3f3;--card:#fff;--bd:#dde3e3;--wn:#c0392b;--ok:#1e8e5a}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 Helvetica Neue,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--tx)}
+header{background:#fff;border-top:5px solid var(--orange);border-bottom:1px solid var(--bd);padding:10px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;border-radius:10px;display:block}
+header h1{font-size:18px;margin:0;color:var(--ink);font-weight:700}
+header small{color:var(--mu)}
+.brsel{min-width:250px}
+nav{background:var(--teal);display:flex;gap:0;flex-wrap:wrap;padding:0 20px;margin-bottom:18px}
+nav button{background:none;border:0;border-bottom:4px solid transparent;color:#fff;padding:13px 16px;cursor:pointer;font:inherit;font-weight:600}
+nav button:hover{background:rgba(255,255,255,.12)}
+nav button.on{border-bottom-color:var(--orange);background:rgba(0,0,0,.08)}
+main{padding:0 16px 40px;max-width:1100px;margin:auto}
+.card{background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--teal);border-radius:6px;padding:18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+h2{font-size:19px;margin:0 0 10px;color:var(--ink)}
+h3{font-size:15px;margin:14px 0 6px}
+label{display:block;font-size:13px;color:var(--mu);margin:12px 0 4px;font-weight:600}
+select,input{width:100%;padding:10px;border:1px solid #c5cece;border-radius:4px;background:#fff;color:var(--tx);font:inherit}
+select:focus,input:focus,.b:focus-visible,nav button:focus-visible{outline:3px solid rgba(248,156,44,.55);outline-offset:1px}
+input[type=checkbox]{width:auto}
+.b{border:1px solid var(--teal-d);background:#fff;color:var(--teal-d);padding:9px 16px;border-radius:4px;cursor:pointer;font:inherit;font-weight:600}
+.b:hover{background:#e8f6f6}
+.b.p{background:var(--teal-d);color:#fff;border-color:var(--teal-d)}
+.b.p:hover{background:#006f6e}
+.b.w{border-color:var(--wn);color:var(--wn)}
+.b:disabled{opacity:.4;cursor:not-allowed}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
+.g .b{text-align:center;line-height:1.3}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.k{font-size:32px;font-weight:700;color:var(--teal-d)}
+.mu{color:var(--mu);font-size:13px}
+.tag{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12px;background:#e6ecec}
+.tag.a{background:var(--teal);color:#fff}
+.tag.pr{background:var(--orange);color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;padding:8px 6px;background:#f6f8f8;border-bottom:2px solid var(--teal);color:var(--ink)}
+td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--bd)}
+.msg{background:#eef9f9;border-left:4px solid var(--orange);padding:10px 12px;border-radius:4px;margin-top:10px;white-space:pre-line}
+.warn{background:#fff3e0;border-left:4px solid var(--orange);color:#6b3d00;padding:10px 12px;border-radius:4px;margin:8px 0}
+.big{font-size:54px;font-weight:800;color:var(--teal-d);letter-spacing:1px}
+.disp{background:var(--teal);color:#fff;border-radius:8px;padding:26px;border-bottom:8px solid var(--orange)}
+.disp .row{display:flex;justify-content:space-between;font-size:46px;font-weight:700;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.35)}
+.disp .row span:first-child{color:var(--ink);background:#fff;padding:0 16px;border-radius:6px}
+.disp .mu{color:#fff;font-size:15px}
+@media(max-width:600px){nav button{padding:11px 10px;font-size:14px}.disp .row{font-size:32px}}
+.brsel{display:flex;gap:8px;align-items:center}.brsel select{min-width:220px}
+.login{max-width:380px;margin:30px auto}
